@@ -5,10 +5,10 @@ import axios from "axios";
 const AISymptomChecker = () => {
   const [symptoms, setSymptoms] = useState("");
   const [result, setResult] = useState(null);
-
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
   const checkSymptoms = async () => {
     const res = await axios.post(
-      "http://localhost:5000/api/symptoms/check-ai-symptoms",
+      `${backendUrl}/symptoms/check-ai-symptoms`,
       { symptoms: symptoms.split(",") } // send as array
     );
     setResult(res.data);

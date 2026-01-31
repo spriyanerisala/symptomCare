@@ -14,7 +14,7 @@ const Appointment = () => {
   const [timing, setTiming] = useState("");
   const [emergency, setEmergency] = useState(false);
   const [message, setMessage] = useState("");
-
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
   if (!doctor) {
     return (
       <>
@@ -27,7 +27,7 @@ const Appointment = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/appointments/book", {
+      const res = await axios.post(`${backendUrl}/appointments/book`, {
         patientName,
         symptoms: symptoms.split(",").map(s => s.trim()),
         doctorName: doctor.name,
@@ -45,7 +45,7 @@ const Appointment = () => {
 
   return (
     <>
-      <Navbar />
+     
       <div className="max-w-2xl mx-auto px-6 py-10">
         <h2 className="text-3xl font-bold text-blue-600 mb-6 text-center">
           Book Appointment
@@ -105,7 +105,14 @@ const Appointment = () => {
               Book Appointment
             </button>
 
-            <button className="ml-4 bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 transition" onClick={()=>{navigate('/doctors')}}>Go Back</button>
+            <button
+  type="button"
+  className="ml-4 bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 transition"
+  onClick={() => navigate("/doctors")}
+>
+  Go Back
+</button>
+
           </form>
 
           {message && <p className="mt-4 text-green-600">{message}</p>}

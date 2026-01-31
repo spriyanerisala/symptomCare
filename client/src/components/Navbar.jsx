@@ -14,6 +14,9 @@ const Navbar = () => {
 <Link to="/ai-symptoms" className="hover:text-gray-200">
   AI Symptoms Checker
 </Link>
+<Link to="/get-appointments" className="hover:text-gray-200">
+  All Appointments
+</Link>
       </div>
     </nav>
   );

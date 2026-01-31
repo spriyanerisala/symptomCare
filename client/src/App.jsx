@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import SymptomChecker from "./pages/SymptomChecker";
@@ -6,6 +7,7 @@ import Doctors from "./pages/Doctors";
 import AISymptomChecker from './pages/AISymptomChecker'
 import AppointmentSuccess from "./pages/AppointmentSuccess";
 import Navbar from "./components/Navbar";
+import Appointments from "./pages/getAppointments";
 function App() {
   return (
     <BrowserRouter>
@@ -17,6 +19,7 @@ function App() {
         <Route path="/doctors" element={<Doctors />} />
         <Route path="/ai-symptoms" element={<AISymptomChecker />} />
         <Route path="/appointment-success" element={<AppointmentSuccess />} />
+        <Route path="/get-appointments" element={<Appointments/>} />
       </Routes>
     </BrowserRouter>
   );

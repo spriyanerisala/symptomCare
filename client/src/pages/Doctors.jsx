@@ -7,10 +7,12 @@ const Doctors = () => {
   const [doctors, setDoctors] = useState([]);
   const [loading, setLoading] = useState(true);
 const navigate = useNavigate();
+
+const backendUrl = import.meta.env.VITE_BACKEND_URL;  //http://localhost:5000/api
   useEffect(() => {
-    const fetchDoctors = async () => {
+    const fetchDoctors = async () => { 
       try {
-        const res = await axios.get("http://localhost:5000/api/doctors/get");
+        const res = await axios.get(`${backendUrl}/doctors/get`);
         setDoctors(res.data);
         setLoading(false);
       } catch (err) {

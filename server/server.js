@@ -8,7 +8,10 @@ import doctorRoutes from "./routes/doctorRoutes.js";
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin:process.env.FRONTEND_URL,
+  credentials:true
+}));
 app.use(express.json());
 
 await connectDB();
@@ -19,7 +22,7 @@ app.use("/api/symptoms", symptomRoutes);
 app.use("/api/appointments", appointmentRoutes);
 app.use("/api/doctors", doctorRoutes);
 
-
-app.listen(5000, () => {
-  console.log("Server running on port 5000");
+const port = process.env.PORT;
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
 });
