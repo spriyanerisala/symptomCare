@@ -15,7 +15,7 @@ app.use(cors({
 app.use(express.json());
 
 await connectDB();
-app.get('/health',(req,res)=>{
+app.get('/',(req,res)=>{
     res.send("healthcare API is running ")
 })
 app.use("/api/symptoms", symptomRoutes);
