@@ -8,7 +8,8 @@ const Doctors = () => {
   const [loading, setLoading] = useState(true);
 const navigate = useNavigate();
 
-const backendUrl = import.meta.env.VITE_BACKEND_URL;  //http://localhost:5000/api
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
+console.log("backendUrl : " ,backendUrl)  //http://localhost:5000/api
   useEffect(() => {
     const fetchDoctors = async () => { 
       try {

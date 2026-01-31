@@ -9,8 +9,10 @@ import doctorRoutes from "./routes/doctorRoutes.js";
 const app = express();
 
 app.use(cors({
-  origin:"*",
-  credentials:true
+  origin:process.env.FRONTEND_URL,
+  credentials:true,
+  methods:["GET","POST","PUT","DELETE"],
+
 }));
 app.use(express.json());
 
