@@ -1,0 +1,7 @@
+{
+  "buildCommand": "npm ci --verbose",
+  "devCommand": "npm run dev",
+  "installCommand": "npm ci",
+  "framework": "vite",
+  "nodeVersion": "20.x"
+}
