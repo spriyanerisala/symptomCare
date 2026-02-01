@@ -13,7 +13,7 @@ console.log("backendUrl : " ,backendUrl)  //http://localhost:5000/api
   useEffect(() => {
     const fetchDoctors = async () => { 
       try {
-        const res = await axios.get(`${backendUrl}/doctors/get`);
+        const res = await axios.get(`${backendUrl}/api/doctors/get`);
         setDoctors(res.data);
         setLoading(false);
       } catch (err) {

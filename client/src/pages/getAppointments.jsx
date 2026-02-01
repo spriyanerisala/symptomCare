@@ -12,7 +12,7 @@ const Appointments = () => {
     const fetchAppointments = async () => {
       try {
         const res = await axios.get(
-          `${backendUrl}/appointments/get-appointments`
+          `${backendUrl}/api/appointments/get-appointments`
         );
 
         setAppointments(res.data.appointments);

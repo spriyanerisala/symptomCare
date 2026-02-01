@@ -7,10 +7,10 @@ const SymptomChecker = () => {
   const [symptoms, setSymptoms] = useState("");
   const [result, setResult] = useState(null);
   const navigate = useNavigate();
-
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
   const checkSymptoms = async () => {
     const res = await axios.post(
-      "http://localhost:5000/api/symptoms/check",
+      `${backendUrl}/api/symptoms/check`,
       { symptoms: symptoms.toLowerCase().split(",") }
     );
     setResult(res.data);
